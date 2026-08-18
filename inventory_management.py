@@ -34,8 +34,13 @@ class Inventory:
         for item in self.items.values():
             print("Name :",item.name, "Price :",item.price, "Quantity :",item.quantity,"Product ID:", item.item_id)
 
+        user_input = input("Enter item ID to select (or q to exit): ")
+
+        if user_input.lower() == "q":
+            break
+
         try:
-            item_id = int(input("Enter item ID to select (or ___ to exit): "))
+            item_id = int(user_input)
         except ValueError:
             print("Enter a valid numeric item ID.")
             continue
